@@ -11,7 +11,7 @@ docker stop openvpn
 docker rm openvpn
 rm -rf /data/openvpn/
 docker run -d --name openvpn --hostname openvpn --privileged \
-  -p 1194:1194 \\
+  -p 1194:1194 \
   -v /data/openvpn/etc:/etc/openvpn \
   -v /data/openvpn/logs:/var/log/openvpn \
   -e SERVER_IP="x.x.x.x:1194" \
@@ -46,7 +46,7 @@ openvpn
 
 ### 以当前容器为例
 >* 客户端配置文件:/data/openvpn/etc/Client.ovpn
->*  ldap登录日 志:/data/openvpn/logs/openvpn_ldap_login.log
+>*  ldap登录日志:/data/openvpn/logs/openvpn_ldap_login.log
 
 >*  file认证文件:/data/openvpn/etc/scripts/openvpn_user.txt(空格分割，账号密码。)
 >* file认证日志:/var/log/openvpn/openvpn_user_login.log
